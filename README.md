@@ -1,6 +1,6 @@
 # cp-spring\_cloud\_streams-example
 
-Very simple example to demonstrate Spring Cloud Streams (_SCS_) exchanging data with Kafka topics
+Very simple example to demonstrate Spring Cloud Streams (_SCS_) exchanging data with Apache Kafka topics
 
 The easiest way to get started is to use the [Spring Initializr](https://start.spring.io/) site. 
 Set a `Group` and `Artifact` name and add `Kafka` and `Cloud Stream` as dependencies.
@@ -18,7 +18,7 @@ mvn eclipse:eclipse
 _SCS_ abstracts away the mechanics of connecting to the underlying messaging system by using the concept of a _Binder_. If only a single binder is found on the class path then it will be used, but it's also possible to explicitly set which one to use by adding an `@Import` statement to the [Main Application](src/main/java/io/confluent/examples/scs_demo/ScsDemoApplication.java)
 
 ## Set up a Listener
-Now lets add the simplest possible Kafka topic listener to the code.
+Now lets add the simplest possible topic listener to the code.
 
 Create a Channel definition interface which annotates a single method as an `@Input`. See [ListenerDefinition.java](src/main/java/io/confluent/examples/scs_demo/ListenerDefinition.java). This interface defines the name `input_topic` which is used in binding to the properties provided to the application. So in this example the properties `spring.cloud.stream.bindings.input_topic.*` are used by the Kafka binder to configure the actual Kafka consumer. Note that we can define multiple separate `@Input` methods if we want to have multiple bindings (for example to handle different message types).
 
