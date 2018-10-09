@@ -1,4 +1,4 @@
-# cp-spring\_cloud\_streams-example
+# cp-spring\_cloud\_streams-simple_consumer
 
 Very simple example to demonstrate Spring Cloud Streams (_SCS_) exchanging data with Apache Kafka topics
 
