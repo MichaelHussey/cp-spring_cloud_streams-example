@@ -24,7 +24,7 @@ Create a Channel definition interface which annotates a single method as an `@In
 
 And of course we need some code to be executed which is provided in [ListenerImpl.java](src/main/java/io/confluent/examples/scs_demo/ListenerImpl.java). The `@StreamListener(ListenerDefinition.INPUT)` annotation informs the Kafka binder that the `processRawMessage()` method should be invoked when a message is received on the `input_topic`. The _SCS_ framework is smart enough to unpack the message payload depending on the method signature as can be seen in `processDeserialised()`. 
 
-As you can see the application code doesn't need to know any details of the actual Kafka messaging system and all configuration is isolated to the [application.properties](src/main/resources/application.properties) file. See the [SCS documentation](https://docs.spring.io/spring-cloud-stream/docs/Brooklyn.RELEASE/reference/html/_apache_kafka_binder.html) for details.
+As you can see the application code doesn't need to know any details of the actual Kafka messaging system and all configuration is isolated to the [application.properties](src/main/resources/application.properties) file. See the [SCS documentation](https://docs.spring.io/spring-cloud-stream/docs/current/reference/html/_apache_kafka_binder.html) for details.
 
 ## Start ZooKeeper and Kafka
 If you have docker installed then you can use the provided [docker-compose.yml](docker-compose.yml) file.
